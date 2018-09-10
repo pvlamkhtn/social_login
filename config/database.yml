@@ -1,0 +1,20 @@
+default: &default
+  adapter:  postgresql
+  host:     localhost
+  port:     5432
+  encoding: unicode
+  pool:     5
+  username: postgres
+  password: postgres
+  template: template0
+development:
+  <<: *default
+  database: social_login_development
+
+test:
+  <<: *default
+  database: social_login_test
+
+production:
+  <<: *default
+  database: social_login_production
